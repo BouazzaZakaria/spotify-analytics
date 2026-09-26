@@ -1,0 +1,26 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python environments and generated files
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache
+
+# Local datasets and pipeline outputs
+*.csv
+output/
+
+# Power BI reports and temporary files
+*.pbix
+*.pbit
+*.tmp
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
