@@ -111,14 +111,7 @@ Refresh the Power BI model after rerunning the pipeline to load updated data. Sc
 
 ## Spotify API Extraction Notes
 
-`extract.py` contains helper functions for playlist tracks, top artists, and recently played tracks. The current `run_pipeline.py` does not call those helpers; it reads the local `spotify_tracks.csv` input directly. The helpers also require Spotify credentials and appropriate OAuth scopes for user-specific endpoints. Verify current Spotify API access and authorization requirements before relying on those functions in an automated extraction workflow.
-
-## Data and Security
-
-- Never commit `.env`; it is ignored by Git. `.env.example` contains placeholders only.
-- `spotify_tracks.csv` and generated `*.csv` files are ignored because they can be large, are reproducible, and may have separate redistribution terms.
-- Virtual environments, caches, and `.pbix`/`.pbit` report files are local artifacts and are ignored.
-- Review `git status` and the staged file list before pushing to GitHub. If a credential was ever committed or shared, revoke or rotate it; deleting it in a later commit does not remove it from Git history.
+`extract.py` contains helper functions for playlist tracks, top artists, and recently played tracks. The current `run_pipeline.py` does not call those helpers; it reads the local `spotify_tracks.csv` input directly. The helpers also require Spotify credentials and appropriate OAuth scopes for user-specific endpoints. Verify current Spotify API access and authorization requirements before relying on those functions in an automated extraction workflow
 
 ## Current Limitations
 
