@@ -13,12 +13,10 @@ def transform_tracks(df):
     df.columns = df.columns.str.strip().str.lower()
 
     # ---------- 2. Deduplication ----------
-    # Same track appears on many compilation playlists (e.g. "Winter Wonderland"
-    # x9 above). Keep the row with highest popularity per track_id.
+    
     df = (df.sort_values("popularity", ascending=False)
             .drop_duplicates(subset="track_id", keep="first")
             .reset_index(drop=True))
-
     # ---------- 3. Handle nulls ----------
     audio_cols = ["danceability", "energy", "valence", "tempo", "loudness",
                   "acousticness", "speechiness", "instrumentalness", "liveness"]
